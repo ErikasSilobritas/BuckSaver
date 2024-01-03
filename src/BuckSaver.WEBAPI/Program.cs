@@ -47,7 +47,7 @@ namespace BuckSaver.WEBAPI
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "HopShop", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "BuckSaver", Version = "v1" });
 
                 // Include the XML comments file
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";

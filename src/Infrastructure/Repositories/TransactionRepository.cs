@@ -37,7 +37,7 @@ namespace Infrastructure.Repositories
 
         public async Task<IEnumerable<TransactionEntity?>> GetTransactionsByUserId(int userId)
         {
-            string sql = "SELECT * FROM transactions JOIN accounts ON transactions.\"accountId\" = accounts.id WHERE accounts.\"userId\" = @UserId AND \"isDeleted\" = false";
+            string sql = "SELECT transactions.id, transactions.\"accountId\", transactions.type, transactions.amount, transactions.fees FROM transactions JOIN accounts ON transactions.\"accountId\" = accounts.id WHERE accounts.\"userId\" = @UserId AND transactions.\"isDeleted\" = false";
             var queryArguments = new
             {
                 UserId = userId

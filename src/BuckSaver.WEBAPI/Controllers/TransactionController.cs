@@ -24,7 +24,7 @@ namespace BuckSaver.WEBAPI.Controllers
         }
 
         /// <summary>
-        /// Top up user balance
+        /// Top up account balance
         /// </summary>
         [HttpPost("topUp")]
         public async Task<ActionResult> TopUp([FromBody] TopUp topUp)

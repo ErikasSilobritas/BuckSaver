@@ -127,7 +127,7 @@ namespace Application.Services
 
             int senderId = (await _accountRepository.GetAccount(transfer.FromAccountId))!.UserId;
             int receiverId = (await _accountRepository.GetAccount(transfer.ToAccountId))!.UserId;
-
+            
             if (senderId == receiverId)
             {
                 transferToOwnAccount = true;
