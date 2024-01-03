@@ -1,0 +1,46 @@
+﻿CREATE OR REPLACE FUNCTION updateModifiedAt()
+RETURNS TRIGGER AS $$
+BEGIN
+	NEW."modifiedAt" = NOW();
+	RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER accountModified
+BEFORE UPDATE ON accounts
+FOR EACH ROW
+EXECUTE FUNCTION updateModifiedAt();
+
+CREATE TRIGGER transactionModified
+BEFORE UPDATE ON transactions
+FOR EACH ROW
+EXECUTE FUNCTION updateModifiedAt();
+
+CREATE TRIGGER userModified
+BEFORE UPDATE ON users
+FOR EACH ROW
+EXECUTE FUNCTION updateModifiedAt();
+
+
+CREATE OR REPLACE FUNCTION updateModifiedBy()
+RETURNS TRIGGER AS $$
+BEGIN
+	NEW."modifiedBy" = 'Erikas';
+	RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER accountModifiedBy
+BEFORE UPDATE ON accounts
+FOR EACH ROW
+EXECUTE FUNCTION updateModifiedBy();
+
+CREATE TRIGGER transactionModifiedBy
+BEFORE UPDATE ON transactions
+FOR EACH ROW
+EXECUTE FUNCTION updateModifiedBy();
+
+CREATE TRIGGER userModifiedBy
+BEFORE UPDATE ON users
+FOR EACH ROW
+EXECUTE FUNCTION updateModifiedBy();

@@ -1,0 +1,6 @@
+@BuckSaver.WEBAPI_HostAddress = http://localhost:5007
+
+GET {{BuckSaver.WEBAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
