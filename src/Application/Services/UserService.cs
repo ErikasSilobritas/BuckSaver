@@ -2,11 +2,6 @@
 using Domain.Entities;
 using Domain.Exceptions;
 using Domain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Services
 {
@@ -33,7 +28,7 @@ namespace Application.Services
         public async Task<GetUser> GetUser(int id)
         {
             var user = await _userRepository.GetUser(id);
-            
+
             if (user is null)
             {
                 throw new UserNotFoundException();
@@ -61,9 +56,9 @@ namespace Application.Services
             {
                 Name = requestedUser.Name,
                 Address = requestedUser.Address
-            }; 
+            };
             return createdUser;
-            
+
         }
     }
 }

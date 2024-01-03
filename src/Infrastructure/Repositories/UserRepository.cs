@@ -1,12 +1,7 @@
 ﻿using Dapper;
 using Domain.Entities;
 using Domain.Interfaces;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Infrastructure.Repositories
 {
@@ -19,7 +14,7 @@ namespace Infrastructure.Repositories
             _connection = connection;
         }
 
-        public async Task<IEnumerable<UserEntity>>GetUsers()
+        public async Task<IEnumerable<UserEntity>> GetUsers()
         {
             return _connection.Query<UserEntity>("SELECT * FROM users WHERE \"isDeleted\" = false");
         }

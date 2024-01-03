@@ -2,11 +2,6 @@
 using Domain.Entities;
 using Domain.Exceptions;
 using Domain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Services
 {
@@ -29,7 +24,7 @@ namespace Application.Services
             }
             int accountCount = await GetAccountCount(createAccount.UserId);
 
-            if(accountCount >= 2)
+            if (accountCount >= 2)
             {
                 throw new AccountNumberExceededException();
             }
@@ -55,7 +50,7 @@ namespace Application.Services
             return createdAccount;
         }
 
-        public async Task <int> GetAccountCount(int userId)
+        public async Task<int> GetAccountCount(int userId)
         {
             var accounts = await _accountRepository.GetAccounts(userId);
             int accountCount = accounts.Count();

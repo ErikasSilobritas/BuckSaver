@@ -1,18 +1,11 @@
-﻿using Domain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Data.Common;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Domain.DTOs;
+﻿using Dapper;
 using Domain.Entities;
-using Dapper;
+using Domain.Interfaces;
+using System.Data;
 
 namespace Infrastructure.Repositories
 {
-    
+
     public class AccountRepository : IAccountRepository
     {
         private readonly IDbConnection _connection;
@@ -22,7 +15,7 @@ namespace Infrastructure.Repositories
             _connection = connection;
         }
 
-        public async Task<AccountEntity?> GetAccount (int id)
+        public async Task<AccountEntity?> GetAccount(int id)
         {
             string sql = "SELECT * FROM accounts WHERE id = @Id AND \"isDeleted\" = false";
             var queryArguments = new
@@ -31,7 +24,7 @@ namespace Infrastructure.Repositories
             };
             return _connection.QuerySingleOrDefault<AccountEntity?>(sql, queryArguments);
         }
-        public async Task<IEnumerable<AccountEntity?>> GetAccounts (int userId)
+        public async Task<IEnumerable<AccountEntity?>> GetAccounts(int userId)
         {
             string sql = "SELECT * FROM accounts WHERE \"userId\" = @UserId AND \"isDeleted\" = false";
             var queryArguments = new
@@ -39,10 +32,10 @@ namespace Infrastructure.Repositories
                 UserId = userId
             };
 
-            return await _connection.QueryAsync<AccountEntity?> (sql, queryArguments);
+            return await _connection.QueryAsync<AccountEntity?>(sql, queryArguments);
         }
 
-        public async Task <decimal?> GetAccountBalance (int accountId)
+        public async Task<decimal?> GetAccountBalance(int accountId)
         {
             string sql = "SELECT balance FROM accounts WHERE id = @AccountId";
             var queryArguments = new
@@ -50,7 +43,7 @@ namespace Infrastructure.Repositories
                 AccountId = accountId
             };
 
-            decimal? balance = _connection.QuerySingleOrDefault<decimal?> (sql, queryArguments);
+            decimal? balance = _connection.QuerySingleOrDefault<decimal?>(sql, queryArguments);
             return balance;
         }
         public async Task<AccountEntity> CreateAccount(AccountEntity account)

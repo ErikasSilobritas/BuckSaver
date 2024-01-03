@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Domain.Entities
+﻿namespace Domain.Entities
 {
     public class TransactionEntity : BaseEntity
     {
@@ -12,7 +6,7 @@ namespace Domain.Entities
         public int AccountId { get; set; }
         public string Type { get; set; }
         public decimal Amount { get; set; }
-        public decimal? Fees {  get; set; }
+        public decimal? Fees { get; set; }
 
     }
 }

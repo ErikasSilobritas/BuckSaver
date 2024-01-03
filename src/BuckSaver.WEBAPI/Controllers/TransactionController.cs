@@ -18,7 +18,7 @@ namespace BuckSaver.WEBAPI.Controllers
         /// </summary>
         [HttpGet]
         [Route("{userId}")]
-        public async Task<ActionResult<List<GetTransactions>>> Get (int userId)
+        public async Task<ActionResult<List<GetTransactions>>> Get(int userId)
         {
             return Ok(await _transactionService.GetTransactionsByUserId(userId));
         }

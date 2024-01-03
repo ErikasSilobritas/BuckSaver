@@ -2,11 +2,6 @@
 using Domain.Entities;
 using Domain.Exceptions;
 using Domain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Application.Services
 {
@@ -23,7 +18,7 @@ namespace Application.Services
 
         }
 
-        public async Task<List<GetTransactions>>GetTransactionsByUserId(int userId)
+        public async Task<List<GetTransactions>> GetTransactionsByUserId(int userId)
         {
             var user = await _userRepository.GetUser(userId);
 
@@ -88,7 +83,7 @@ namespace Application.Services
 
         public async Task<TopUp> TopUp(TopUp topUp)
         {
-            if(topUp.Amount < 0.01m)
+            if (topUp.Amount < 0.01m)
             {
                 throw new IncorrectTransferAmountException();
             }
@@ -121,7 +116,7 @@ namespace Application.Services
             return confirmedTransaction;
         }
 
-        public async Task Transfer (Transfer transfer)
+        public async Task Transfer(Transfer transfer)
         {
             if (transfer.Amount < 0.01m)
             {

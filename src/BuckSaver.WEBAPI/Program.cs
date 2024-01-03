@@ -35,9 +35,9 @@ namespace BuckSaver.WEBAPI
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(result.Error);
                 Console.ResetColor();
-                #if DEBUG
+#if DEBUG
                 Console.ReadLine();
-                #endif
+#endif
             }
 
             // Add services to the container.
