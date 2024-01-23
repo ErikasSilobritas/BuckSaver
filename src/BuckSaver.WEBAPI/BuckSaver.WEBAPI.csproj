@@ -7,6 +7,9 @@
     <InvariantGlobalization>true</InvariantGlobalization>
 	  <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <UserSecretsId>e6f79232-ca57-496a-b615-b1566d5bbe09</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
+    <DockerComposeProjectPath>..\..\docker-compose.dcproj</DockerComposeProjectPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,6 +25,7 @@
   <ItemGroup>
     <PackageReference Include="dbup-postgresql" Version="5.0.37" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.5" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 

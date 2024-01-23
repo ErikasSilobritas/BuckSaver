@@ -1,0 +1,27 @@
+version: '3.4'
+
+services:
+  bucksaver.webapi:
+    image: ${DOCKER_REGISTRY-}bucksaverwebapi
+    build:
+      context: .
+      dockerfile: src/BuckSaver.WEBAPI/Dockerfile
+    ports:
+      - "5000:5000"
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:latest
+    restart: always
+    environment:
+      POSTGRES_DB: BuckSaver
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 19970101
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:

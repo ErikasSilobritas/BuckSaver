@@ -9,11 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuckSaver.WEBAPI", "src\Buc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "src\Application\Application.csproj", "{B789FD46-5A69-4C8B-9E99-46A3768DCFC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "src\Domain\Domain.csproj", "{4E5B9DDB-0999-43F9-B093-CF71725639C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "src\Domain\Domain.csproj", "{4E5B9DDB-0999-43F9-B093-CF71725639C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "src\Infrastructure\Infrastructure.csproj", "{E9D9FD7C-2400-4EDC-8665-2F016DEF62EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "src\Infrastructure\Infrastructure.csproj", "{E9D9FD7C-2400-4EDC-8665-2F016DEF62EA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{9080461B-172F-43FD-A624-9EF003AC57D1}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{11C8EFB4-ECA9-4A1E-A123-6ACD268C8881}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{E9D9FD7C-2400-4EDC-8665-2F016DEF62EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9D9FD7C-2400-4EDC-8665-2F016DEF62EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9D9FD7C-2400-4EDC-8665-2F016DEF62EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11C8EFB4-ECA9-4A1E-A123-6ACD268C8881}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11C8EFB4-ECA9-4A1E-A123-6ACD268C8881}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11C8EFB4-ECA9-4A1E-A123-6ACD268C8881}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11C8EFB4-ECA9-4A1E-A123-6ACD268C8881}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
